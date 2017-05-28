@@ -1,0 +1,14 @@
+doctype html
+html(lang="ja")
+	head
+		include meta.pug
+body
+	header#header
+		div.content
+			include header.pug
+	section#body
+		div.content
+			block content
+	footer#footer
+		div.content
+			include footer.pug
