@@ -1,21 +1,46 @@
-div.header.pure-menu.pure-menu-horizontal
-	ul.pure-menu-list
-		//- li
-		li.pure-menu-item
+div.header
+	div.header-default
+		ul.menu-list
+			li.menu-item
+				a(href="/")
+					img(src="/img/logo.webp")#logo
+			li.menu-item
+				a(href="/intro.html").menu-link.
+					ご挨拶
+			li.menu-item
+				a(href="/menu.html").menu-link.
+					お食事
+			li.menu-item
+				a(href="/sale.html").menu-link.
+					お肉の販売
+			li.menu-item
+				a(href="/access.html").menu-link.
+					アクセス
+			li.menu-item
+				a(href="/info.html").menu-link.
+					会社概要
+
+	div.header-mobile
+		div.logo
 			a(href="/")
 				img(src="/img/logo.webp")#logo
-		li.pure-menu-item
-			a(href="/intro.html").pure-menu-link.
-				ご挨拶
-		li.pure-menu-item
-			a(href="/menu.html").pure-menu-link.
-				お食事
-		li.pure-menu-item
-			a(href="/sale.html").pure-menu-link.
-				お肉の販売
-		li.pure-menu-item
-			a(href="/access.html").pure-menu-link.
-				アクセス
-		li.pure-menu-item
-			a(href="/info.html").pure-menu-link.
-				会社概要
+		div.menu-button
+			label(for="menu-check")
+				i(class="fa fa-bars")
+		input(type="checkbox")#menu-check.hidden
+		ul.menu-list
+			li.menu-item
+				a(href="/intro.html").menu-link.
+					ご挨拶
+			li.menu-item
+				a(href="/menu.html").menu-link.
+					お食事
+			li.menu-item
+				a(href="/sale.html").menu-link.
+					お肉の販売
+			li.menu-item
+				a(href="/access.html").menu-link.
+					アクセス
+			li.menu-item
+				a(href="/info.html").menu-link.
+					会社概要

@@ -2,7 +2,7 @@ html {
 	width: 100%;
 }
 html, body {
-	background-color: #190000;
+	background-color: #000;
 	height: 100%;
 	color: #666;
 }
@@ -10,6 +10,9 @@ html, body {
 h1, h2, h3, h4, .pure-menu-link {
 	font-family: "Sawarabi Gothic";
 	color: #555;
+}
+p {
+	overflow-wrap: break-word;
 }
 
 #header, #footer {
@@ -27,23 +30,86 @@ h1, h2, h3, h4, .pure-menu-link {
 		background-color: #1A1C1E;
 	}
 	.header {
-		padding: 0 10px !important;
 		margin: 0;
-		height: 80px;
-		#logo {
-			height: 64px;
-			padding: 2px;
-		}
-		.pure-menu-list {
-			height: 80px;
-		}
-		.pure-menu-item {
+		.menu-list {
+			display: inline-block;
+			list-style: none;
+			padding: 0;
 			margin: 0;
-			.pure-menu-link {
+			.menu-item {
+				display: block;
+				float: left;
+				height: 80px;
+				.menu-link {
+					display: block;
+					color: #FFF;
+					margin: 0;
+					padding: 0 10px;
+					line-height: 80px;
+					text-decoration: none;
+					-webkit-transition: all 0.5s;
+					-moz-transition: all 0.5s;
+					-ms-transition: all 0.5s;
+					-o-transition: all 0.5s;
+					transition: all 0.5s;
+					&:hover {
+						color: #666;
+						background-color: #FFF;
+						font-weight: bold;
+					}
+				}
+			}
+		}
+		.header-default {
+			padding: 0 10px !important;
+			height: 80px;
+			#logo {
+				height: 64px;
+				padding: 2px;
+			}
+		}
+		.header-mobile {
+			display: none;
+			#logo {
+				height: 70px;
+				float: left;
+			}
+			.menu-button {
+				float: right;
+				display: block;
+				color: #FFF;
+				font-size: 40px;
+				padding: 10px 20px;
 				margin: 0;
-				padding: 0 10px;
-				font-size: 16px;
-				line-height: 80px;
+				&:hover {
+					color: #666;
+					background-color: #FFF;
+				}
+			}
+			.menu-list {
+				display: block;
+				clear: both;
+				height: 0;
+				-webkit-transition: all 0.5s;
+				-moz-transition: all 0.5s;
+				-ms-transition: all 0.5s;
+				-o-transition: all 0.5s;
+				transition: all 0.5s;
+				.menu-item {
+					display: block;
+					float: none;
+					height: 40px;
+					.menu-link {
+						line-height: 40px;
+					}
+				}
+			}
+			input[type="checkbox"] + .menu-list{
+				height: 0;
+				overflow: hidden;
+			}
+			input[type="checkbox"]:checked + .menu-list{
+				height: 200px;
 			}
 		}
 	}
@@ -73,11 +139,8 @@ h1, h2, h3, h4, .pure-menu-link {
 			text-align: center;
 			height: 100%;
 			img {
-				top: 0;
-				bottom: 0;
-				left: 0;
-				right: 0;
 				margin: auto;
+				max-width: 400px;
 			}
 		}
 		.right {
@@ -100,5 +163,14 @@ h1, h2, h3, h4, .pure-menu-link {
 		a:hover {
 			text-decoration: underline;
 		}
+	}
+}
+
+@media screen and (max-width: 40.5em){
+	.header-default {
+		display: none !important;
+	}
+	.header-mobile {
+		display: block !important;
 	}
 }
